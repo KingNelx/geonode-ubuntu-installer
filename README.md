@@ -1,5 +1,5 @@
 # GeoNode Installation Script for Ubuntu Linux
-GeoNode 3.2.x installation script (based on GeoNode Docker images) for Ubuntu 20.04
+GeoNode 4.2.x installation script (based on GeoNode Docker images) for Ubuntu 20.04
 <br>
 Tested on Ubuntu 20.04 (Lubuntu, WSL2), Ubuntu 18.04 (WSL2)
 
@@ -9,8 +9,8 @@ Tested on Ubuntu 20.04 (Lubuntu, WSL2), Ubuntu 18.04 (WSL2)
 
 As your Ubuntu user (which can do sudo), do the following:
 ``` bash
-wget https://raw.githubusercontent.com/simplygeo/geonode_ubuntu_installation/main/install-geonode-part1.sh
-wget https://raw.githubusercontent.com/simplygeo/geonode_ubuntu_installation/main/install-geonode-part2.sh
+wget https://raw.githubusercontent.com/KingNelx/geonode-ubuntu-installer/main/install-geonode-part1.sh
+wget https://raw.githubusercontent.com/KingNelx/geonode-ubuntu-installer/main/install-geonode-part2.sh
 chmod +x install-geonode*
 ./install-geonode-part1.sh
 ./install-geonode-part2.sh
