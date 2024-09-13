@@ -16,7 +16,7 @@ sudo chmod -R 775 /opt/geonode/
 
 # Clone the GeoNode repository with version 4.2.x
 cd /opt
-git clone https://github.com/GeoNode/geonode.git -b 4.2.x geonode
+git clone https://github.com/GeoNode/geonode.git -b 3.3.3 geonode
 
 # Run the Python script to create the env file
 python3 create-envfile.py
