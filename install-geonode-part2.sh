@@ -40,8 +40,8 @@ case $version_choice in
         VERSION="4.2.x"
         ;;
     *)
-        echo "Invalid choice. Defaulting to 4.2.x."
-        VERSION="4.2.x"
+        echo "Invalid choice. Defaulting to 4.3.x."
+        VERSION="4.3.x"
         ;;
 esac
 
@@ -56,13 +56,19 @@ HTTP_STATUS=$(curl -o /dev/null -s -w "%{http_code}\n" -L "$REPO_URL")
 
 if [ "$HTTP_STATUS" -eq 200 ]; then
     echo "Version $VERSION is valid. Cloning repository..."
+
+    git config --global http.postBuffer 524288000
     
     # Clone the GeoNode repository with the selected version
     cd /opt
     git clone $REPO_URL -b $VERSION geonode
 
-    # Run the Python script to create the env file
-    python3 create-envfile.py
+    cd /opt/geonode
+    
+
+    # Run the Python script to create the env file and automatically respond with 'y'
+    y | python3 create-envfile.py
+
 
     # Pull the necessary Docker images and start GeoNode services
     cd /opt/geonode
