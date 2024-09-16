@@ -72,8 +72,8 @@ if [ "$HTTP_STATUS" -eq 200 ]; then
 
     # Pull the necessary Docker images and start GeoNode services
     cd /opt/geonode
-    docker-compose -f docker-compose.yml pull
-    docker-compose -f docker-compose.yml up -d
+    sudo docker-compose pull
+    sudo docker-compose up -d
 
     # Optional: Update GeoNode if necessary
     cd /opt/geonode
